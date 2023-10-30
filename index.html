@@ -1,20 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Friendsgiving 2023</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="center-container">
-        <button onclick="redirectToLink()">Join Friendsgiving</button>
+
+    <div class="content">
+
+        <h1>Friendsgiving 2023</h1>
+
+        <div class="event-details-box">
+            <div class="details-container">
+                <p>Date: <span>November 18th, 2023</span></p>
+                <p>Time: <span>6:00 PM</span></p>
+                <p>Place: <span>244 Main Street, Epping New Hampshire</span></p>
+            </div>
+        </div>
+
+        <button onclick="redirectToRSVP()">RSVP for Friendsgiving</button>
+
+        <div class="rsvp-list">
+            <h2>Guests and their Dishes</h2>
+            <ul>
+                <li><strong>Jason Worden</strong> will be bringing <strong>Mac and Cheese</strong></li>
+                <li><strong>Kendra Leavitt</strong> will be bringing <strong>a Charcuterie Board</strong></li>
+            </ul>
+        </div>
+
     </div>
 
     <script>
-        function redirectToLink() {
-            window.location.href = "https://www.example.com";
+        function redirectToRSVP() {
+            window.location.href = "https://forms.gle/36x2AmWBqVdrNucJ8";
         }
     </script>
 </body>
+
 </html>

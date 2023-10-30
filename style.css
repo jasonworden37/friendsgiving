@@ -2,39 +2,79 @@ body, html {
     height: 100%;
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #FFEBE5;
-    /* background-image: url('../images/background_pumpkins.jpg'); Replace with your festive background */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-color: #3B2F31; /* Deep autumnal maroon */
 }
 
-.center-container {
+.content {
+    width: 70%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #F9DAD0; /* Light peachy color */
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    border-radius: 15px;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    color: #E89967; /* Warm fall orange */
+    margin-bottom: 30px;
+}
+
+.details-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    flex-wrap: wrap;
+}
+
+.event-details-box p {
+    margin: 10px 20px;  /* Increased side margins to space them out when centered */
+    font-size: 18px;
+    color: #6B4226; /* Earthy brown */
+    text-align: center;  /* Ensuring centered alignment */
+}
+
+.event-details-box p span {
+    font-weight: bold;
+    color: #E67349; /* Pumpkin orange */
 }
 
 button {
+    display: block;
+    margin: 30px auto;
     padding: 15px 30px;
     font-size: 18px;
-    background-color: #D46A31; /* Autumn orange */
-    color: #FFFFFF;
+    background-color: #E67349; /* Pumpkin orange */
+    color: #F9DAD0; /* Light peachy color */
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-    transition: background-color 0.3s, transform 0.3s; /* Added transform for a subtle scaling on hover */
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 button:hover {
-    background-color: #AA5030;
-    transform: scale(1.05); /* Button enlarges slightly on hover */
+    background-color: #E89967; /* Warm fall orange */
+    transform: scale(1.05); /* Slight scale on hover */
 }
 
-/* Optional: Add some festive decorative elements to the button */
-button::before, button::after {
-    content: "🍁"; /* Maple Leaf emoji as a decorative element */
-    margin: 0 10px; /* Space out the leaf from the text */
+.rsvp-list {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.rsvp-list h2 {
+    color: #E89967; /* Warm fall orange */
+}
+
+.rsvp-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.rsvp-list li {
+    padding: 5px 0;
+    color: #6B4226; /* Earthy brown */
 }
