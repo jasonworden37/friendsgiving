@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("snowflakes-container").appendChild(snowflake);
     
         const startPositionX = Math.random() * window.innerWidth;
-        const startPositionY = Math.random() * (window.innerHeight * 0.5); // Adjust 0.5 to set the starting height as a percentage of the window height
+        const startPositionY = Math.random() * (window.innerHeight * 0.1); // Adjust 0.5 to set the starting height as a percentage of the window height
         const animationDuration = Math.random() * 5 + 5; // between 5 and 10 seconds
         const animationDelay = Math.random() * 5; // between 0 and 5 seconds
     

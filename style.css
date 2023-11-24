@@ -5,7 +5,7 @@ body, html {
 }
 
 .background {
-    background-image: url('images/background_christmas.jpeg');
+    background-image: url('images/background.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -40,7 +40,7 @@ p {
 }
 
 .rsvp-button {
-    background-color: #4CAF50;
+    background-color: #C03A42;
     color: white;
     padding: 10px 20px;
     font-size: 1.2em;
@@ -51,7 +51,7 @@ p {
 }
 
 .rsvp-button:hover {
-    background-color: #45a049;
+    background-color: #C03A42;
 }
 
 .event-details,
@@ -86,8 +86,8 @@ li {
 
 .snowflake {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     font-size: 1.5em;
     color: #fff;
     background: transparent url('images/snowflake.png') no-repeat center center;
