@@ -37,18 +37,26 @@ body, html {
 
 h1 {
     font-family: 'Lobster', cursive;
-    font-size: 2.5em;
+    font-size: 3.5em;
     margin-bottom: 10px;
 }
 
+
 p {
-    font-family: 'Cursive', sans-serif;
-    font-size: 1.2em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.0em;
+    margin-bottom: 20px;
+}
+
+p.small
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8em;
     margin-bottom: 20px;
 }
 
 .rsvp-button {
-    background-color: #C03A42;
+    background-color: #BF1C06;
     color: white;
     padding: 10px 20px;
     font-size: 1.2em;
@@ -59,10 +67,22 @@ p {
 }
 
 .rsvp-button:hover {
-    background-color: #C03A42;
+    background-color: #BF1C06;
 }
 
-.event-details,
+.event-details {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.event-location {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+    font-size: 1.0em;
+}
+
 .rsvp-info {
     margin-top: 20px;
 }

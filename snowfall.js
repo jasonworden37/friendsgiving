@@ -22,3 +22,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
 });
+
+const tryToPlay = setInterval(() => {
+    const audio = new Audio("silent_night.mp3");
+
+    audio.play()
+        .then(() => {
+            clearInterval(tryToPlay);
+        })
+        .catch(error => {
+            console.info('User has not interacted with document yet.');
+        });
+}, 5000);

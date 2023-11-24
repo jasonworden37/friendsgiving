@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <title>Christmas Gathering</title>
 </head>
 <body>
     <!-- Play/Pause button -->
-    <button onclick="toggleAudioPlayback()">
+    <!-- <button onclick="toggleAudioPlayback()">
         <img id="playPauseIcon" src="images/play_icon.png" alt="Play">
-    </button>
+    </button> -->
 
     <!-- Audio element for background music -->
     <audio id="backgroundAudio" loop>
@@ -20,20 +21,21 @@
     </audio>
     <div class="background"></div>
     <div class="content">
-        <h1>Merry Christmas!</h1>
-        <p>Enjoy the festive season.</p>
-        
-        <!-- RSVP Button -->
-        <button onclick="redirectToRSVP()" class="rsvp-button">RSVP Now</button>
-
-        <!-- Event Details -->
+        <h1>Friends Christmas Party!</h1>
         <div class="event-details">
-            <p>244 Main Street Epping NH</p>
-            <p>December 16, 2023</p>
-            <p>6:00 PM</p>
+            <p>Saturday, December 16, 2023 @ 5:00pm</p>
         </div>
+        <div class="location-details">
+            <p>244 Main Street, Epping NH</p>
+        </div>
+        <p>Join us for apps, games and gifts</p>
+        <p class="small">You are invited to participate in our $5 yankee <br>
+                        swap, but here's the catch... You can only buy your gift <br>
+                        at a thrift store! (ex: Goodwill, Savers, Salvation Army)</p>
 
-        <!-- RSVP Information -->
+
+        <button onclick="redirectToRSVP()" class="rsvp-button">Click to RSVP</button>
+
         <div class="rsvp-info">
             <ul id="bring-list"></ul>
         </div>
@@ -42,18 +44,18 @@
     <div id="snowflakes-container"></div>
 
     <script>
-        function toggleAudioPlayback() {
-            const audio = document.getElementById('backgroundAudio');
-            const playPauseIcon = document.getElementById('playPauseIcon');
+        // function toggleAudioPlayback() {
+        //     const audio = document.getElementById('backgroundAudio');
+        //     const playPauseIcon = document.getElementById('playPauseIcon');
 
-            if (audio.paused) {
-                audio.play();
-                playPauseIcon.src = 'images/pause_icon.png'; // Replace with the path to your pause icon
-            } else {
-                audio.pause();
-                playPauseIcon.src = 'images/play_icon.png'; // Replace with the path to your play icon
-            }
-        }
+        //     if (audio.paused) {
+        //         audio.play();
+        //         playPauseIcon.src = 'images/pause_icon.png'; // Replace with the path to your pause icon
+        //     } else {
+        //         audio.pause();
+        //         playPauseIcon.src = 'images/play_icon.png'; // Replace with the path to your play icon
+        //     }
+        // }
 
         function redirectToRSVP() {
             window.location.href = "https://your-google-form-link"; // Replace with your Google Form link
