@@ -108,3 +108,10 @@ li {
         transform: translateY(100vh);
     }
 }
+
+/* Style for the play/pause icon */
+#playPauseIcon {
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 5px;
+}
