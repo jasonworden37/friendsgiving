@@ -33,4 +33,4 @@ const tryToPlay = setInterval(() => {
         .catch(error => {
             console.info('User has not interacted with document yet.');
         });
-}, 5000);
+}, 2500);
