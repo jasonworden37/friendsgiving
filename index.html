@@ -1,54 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Friendsgiving 2023</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
+    <title>Christmas Gathering</title>
+    <style>
+        /* Additional styles for the new elements */
+        .rsvp-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .rsvp-button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        .event-details,
+        .rsvp-info {
+            margin-top: 20px;
+        }
+
+        /* Style for the RSVP List */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
 </head>
-
 <body>
-
+    <div class="background"></div>
     <div class="content">
+        <h1>Merry Christmas!</h1>
+        <p>Enjoy the festive season.</p>
 
-        <h1>Friendsgiving 2023</h1>
+        <!-- RSVP Button -->
+        <button onclick="redirectToRSVP()" class="rsvp-button">RSVP Now</button>
 
-        <div class="event-details-box">
-            <div class="details-container">
-                <p>Date: <span>November 18th, 2023</span></p>
-                <p>Time: <span>6:00 PM</span></p>
-                <p>Place: <span>244 Main Street, Epping New Hampshire</span></p>
-            </div>
+        <!-- Event Details -->
+        <div class="event-details">
+            <p>244 Main Street Epping NH</p>
+            <p>December 16, 2023</p>
+            <p>6:00 PM</p>
         </div>
 
-        <button onclick="redirectToRSVP()">RSVP for Friendsgiving</button>
-
-        <div class="rsvp-list">
-            <h2>Guests and their Dishes</h2>
-            <ul>
-                <li><strong>Jason Worden</strong> will be making <strong>Mac and Cheese</strong></li>
-                <li><strong>Kendra Leavitt</strong> will be making a <strong>Charcuterie Board and Salad</strong></li>
-                <li><strong>Ashlee Tiffany</strong> will be making <strong>Mashed Potatoes and Congo Bars</strong></li>
-                <li><strong>Brendon Butland</strong> will be making the <strong>Turkey</strong></li>
-                <li><strong>Kalahn Leavitt</strong> will be making <strong>Popovers</strong></li>
-                <li><strong>Rachel Worden</strong> will be making a <strong>veggie platter and cranberry sauce</strong></li>
-                <li><strong>Becky Worden</strong> will be making <strong>Rolls</strong></li>
-                <li><strong>Seth Chevalier</strong> will be making <strong>Stuffing</strong></li>
-                <li><strong>Jason Lee</strong> will be bringing <strong>Apple and Pumpkin Pie</strong></li>
-                <li><strong>Nathan Cornoni</strong> will be bringing <strong>Corn and Cream Puffs</strong></li>
-                <li><strong>Peyton Rivers</strong> will be making <strong>Oatmeal pumpkin spice cookies</strong></li>
-                <li><strong>Josh Robinson</strong> will be bringing <strong>Cheesecake and wine</strong></li>
-            </ul>
+        <!-- RSVP Information -->
+        <div class="rsvp-info">
+            <h2>RSVP List</h2>
+            <p>Confirmed Guests:</p>
+            <ul id="bring-list"></ul>
         </div>
-
     </div>
+
+    <div id="snowflakes-container"></div>
 
     <script>
         function redirectToRSVP() {
-            window.location.href = "https://forms.gle/36x2AmWBqVdrNucJ8";
+            window.location.href = "https://your-google-form-link"; // Replace with your Google Form link
         }
     </script>
-</body>
 
+    <script defer src="snowfall.js"></script>
+</body>
 </html>
