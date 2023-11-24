@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP Form</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for the RSVP form */
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.2em;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    
+    <form>
+        <h2>RSVP Form</h2>
+        <label for="guests">How many guests are you RSVPing for?</label>
+        <input type="number" id="guests" name="guests" min="1" required>
+
+        <!-- Individual name boxes for each guest -->
+        <div id="nameFields"></div>
+
+        <button type="submit">Submit RSVP</button>
+    </form>
+
+    <script>
+        // Dynamically create name input fields based on the number of guests
+        document.getElementById('guests').addEventListener('input', function () {
+            const numGuests = parseInt(this.value);
+
+            // Clear previous name fields
+            document.getElementById('nameFields').innerHTML = '';
+
+            for (let i = 1; i <= numGuests; i++) {
+                const nameLabel = document.createElement('label');
+                nameLabel.setAttribute('for', `name${i}`);
+                nameLabel.textContent = `Name of Guest ${i}:`;
+
+                const nameInput = document.createElement('input');
+                nameInput.setAttribute('type', 'text');
+                nameInput.setAttribute('id', `name${i}`);
+                nameInput.setAttribute('name', `name${i}`);
+                nameInput.setAttribute('required', '');
+
+                // Append name label and input to the form
+                document.getElementById('nameFields').appendChild(nameLabel);
+                document.getElementById('nameFields').appendChild(nameInput);
+            }
+        });
+    </script>
+</body>
+</html>

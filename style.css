@@ -4,6 +4,7 @@ body, html {
     height: 100%;
 }
 
+/* Default background for computers */
 .background {
     background-image: url('images/background.png');
     background-size: cover;
@@ -16,6 +17,13 @@ body, html {
     height: 100%;
     z-index: -1;
     filter: brightness(60%);
+}
+
+/* Background for phones (max-width: 767px) */
+@media only screen and (max-width: 767px) {
+    .background {
+        background-image: url('images/phone_background.png');
+    }
 }
 
 .content {
