@@ -8,11 +8,10 @@
     <style>
         /* Additional styles for the RSVP form */
         form {
-            max-width: 600px;
+            max-width: 300px;
             margin: 20px auto;
             padding: 20px;
             box-sizing: border-box;
-            background-color: #fff;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -23,67 +22,100 @@
             font-size: 1.2em;
         }
 
-        input {
+        select, input, label, .additional-fields {
             width: 100%;
             padding: 10px;
             margin-bottom: 16px;
             box-sizing: border-box;
         }
 
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+        .additional-fields {
+            display: none;
         }
 
-        button:hover {
-            background-color: #45a049; /* Darker green on hover */
+        .additional-fields.visible {
+            display: block;
+        }
+
+        .additional-fields div {
+            display: flex;
+            align-items: center;
+        }
+
+        .additional-fields label {
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
     <div class="background"></div>
-    
-    <form>
-        <h2>RSVP Form</h2>
-        <label for="guests">How many guests are you RSVPing for?</label>
-        <input type="number" id="guests" name="guests" min="1" required>
+    <div id="snowflakes-container"></div>
+    <form action="file-in-later" method="POST">
+        <div class="content">
+            <h2>RSVP Form</h2>
+            <label for="guestName">Select your name from the guest list</label>
+            <select id="guests" name="guests" required onchange="showAdditionalFields()">
+                <option value="" disabled selected>Select a guest</option>
+                <!-- Add the guest names dynamically here -->
+                <option value="guest1">Ashlee Tiffany</option>
+                <option value="guest2">Brendon Butland</option>
+                <option value="guest3">Becky Worden</option>
+                <option value="guest4">Nick Cornoni</option>
+                <option value="guest5">Nathan Cornoni</option>
+                <option value="guest6">Ellie Cornoni</option>
+                <option value="guest7">Jason Worden</option>
+                <option value="guest8">Jason Lee</option>
+                <option value="guest9">Jacob Grass</option>
+                <option value="guest10">Kalahn Leavitt</option>
+                <option value="guest11">Kendra Leavitt</option>
+                <option value="guest12">Peyton Rivers</option>
+                <option value="guest13">Rachel Worden</option>
+                <option value="guest14">Josh Robinson</option>
+                <option value="guest15">Owen</option>
+                <option value="guest16">Seth Chevalier</option>
+                
+            </select>
 
-        <!-- Individual name boxes for each guest -->
-        <div id="nameFields"></div>
+            <!-- Additional fields for selected guest -->
+            <div class="additional-fields">
+                <label for="attendance">Will you be attending?</label>
+                <div>
+                    <label for="attendanceYes">Yes</label>
+                    <input type="radio" id="attendanceYes" name="attendance" value="yes">
 
-        <button type="submit">Submit RSVP</button>
+                    <label for="attendanceNo">No</label>
+                    <input type="radio" id="attendanceNo" name="attendance" value="no">
+                </div>
+
+                <label for="bringing">Will you be bringing anything?</label>
+                <input type="text" id="bringing" name="bringing">
+
+                <label for="yankeeSwap">Are you participating in the $5 thrift-only Yankee Swap?</label>
+                <div>
+                    <label for="yankeeSwapYes">Yes</label>
+                    <input type="radio" id="yankeeSwapYes" name="yankeeSwap" value="yes">
+
+                    <label for="yankeeSwapNo">No</label>
+                    <input type="radio" id="yankeeSwapNo" name="yankeeSwap" value="no">
+                </div>
+            </div>
+
+            <button type="submit" class="rsvp-button">Submit</button>
+        </div>
     </form>
 
     <script>
-        // Dynamically create name input fields based on the number of guests
-        document.getElementById('guests').addEventListener('input', function () {
-            const numGuests = parseInt(this.value);
+        function showAdditionalFields() {
+            const selectedGuest = document.getElementById('guests').value;
+            const additionalFields = document.querySelector('.additional-fields');
 
-            // Clear previous name fields
-            document.getElementById('nameFields').innerHTML = '';
-
-            for (let i = 1; i <= numGuests; i++) {
-                const nameLabel = document.createElement('label');
-                nameLabel.setAttribute('for', `name${i}`);
-                nameLabel.textContent = `Name of Guest ${i}:`;
-
-                const nameInput = document.createElement('input');
-                nameInput.setAttribute('type', 'text');
-                nameInput.setAttribute('id', `name${i}`);
-                nameInput.setAttribute('name', `name${i}`);
-                nameInput.setAttribute('required', '');
-
-                // Append name label and input to the form
-                document.getElementById('nameFields').appendChild(nameLabel);
-                document.getElementById('nameFields').appendChild(nameInput);
+            if (selectedGuest !== "") {
+                additionalFields.classList.add('visible');
+            } else {
+                additionalFields.classList.remove('visible');
             }
-        });
+        }
     </script>
+    <script defer src="snowfall.js"></script>
 </body>
 </html>

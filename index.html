@@ -10,16 +10,12 @@
 </head>
 <body>
     <div id="snowflakes-container"></div>
-    <!-- Play/Pause button -->
-    <!-- <button onclick="toggleAudioPlayback()">
-        <img id="playPauseIcon" src="images/play_icon.png" alt="Play">
-    </button> -->
 
-    <!-- Audio element for background music -->
     <audio id="backgroundAudio" loop>
         <source src="silent_night.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
+
     <div class="background"></div>
     <div class="content">
         <h1>Friends Christmas Party!</h1>
@@ -39,25 +35,13 @@
 
         <div class="rsvp-info">
             <ul id="bring-list"></ul>
+            <!-- <li>Jason Worden - Beer - Yes</li> -->
         </div>
     </div>
 
     <script>
-        // function toggleAudioPlayback() {
-        //     const audio = document.getElementById('backgroundAudio');
-        //     const playPauseIcon = document.getElementById('playPauseIcon');
-
-        //     if (audio.paused) {
-        //         audio.play();
-        //         playPauseIcon.src = 'images/pause_icon.png'; // Replace with the path to your pause icon
-        //     } else {
-        //         audio.pause();
-        //         playPauseIcon.src = 'images/play_icon.png'; // Replace with the path to your play icon
-        //     }
-        // }
-
         function redirectToRSVP() {
-            window.location.href = "https://your-google-form-link"; // Replace with your Google Form link
+            window.location.href = "rsvp.html";
         }
     </script>
 
