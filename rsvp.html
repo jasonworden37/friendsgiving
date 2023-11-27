@@ -90,6 +90,15 @@
                 <label for="bringing">Will you be bringing anything?</label>
                 <input type="text" id="bringing" name="bringing">
 
+                <label for="pajama">Are you aware that this is a pajama party?</label>
+                <div>
+                    <label for="pajamaYes">Yes</label>
+                    <input type="radio" id="pajamaYes" name="pajama" value="yes">
+
+                    <label for="pajamaNo">No</label>
+                    <input type="radio" id="pajamaNo" name="pajama" value="no">
+                </div>
+
                 <label for="yankeeSwap">Are you participating in the $5 thrift-only Yankee Swap?</label>
                 <div>
                     <label for="yankeeSwapYes">Yes</label>
@@ -106,6 +115,9 @@
 
     <script>
         function showAdditionalFields() {
+            const audio = new Audio("silent_night.mp3");
+            audio.play()
+
             const selectedGuest = document.getElementById('guests').value;
             const additionalFields = document.querySelector('.additional-fields');
 
