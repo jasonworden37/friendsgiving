@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* Additional styles for the RSVP form */
-        form {
+        form 
+        {
+            font-family: 'Montserrat', sans-serif;
             max-width: 300px;
             margin: 20px auto;
             padding: 20px;
@@ -16,33 +18,45 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        label {
+        label 
+        {
+            font-family: 'Montserrat', sans-serif;
             display: block;
             margin-bottom: 8px;
             font-size: 1.2em;
         }
 
-        select, input, label, .additional-fields {
+        select, input, label, .additional-fields 
+        {
+            font-family: 'Montserrat', sans-serif;
             width: 100%;
             padding: 10px;
             margin-bottom: 16px;
             box-sizing: border-box;
         }
 
-        .additional-fields {
+        .additional-fields 
+        {
+            font-family: 'Montserrat', sans-serif;
             display: none;
         }
 
-        .additional-fields.visible {
+        .additional-fields.visible 
+        {
+            font-family: 'Montserrat', sans-serif;
             display: block;
         }
 
-        .additional-fields div {
+        .additional-fields div 
+        {
+            font-family: 'Montserrat', sans-serif;
             display: flex;
             align-items: center;
         }
 
-        .additional-fields label {
+        .additional-fields label 
+        {
+            font-family: 'Montserrat', sans-serif;
             margin-right: 10px;
         }
     </style>
@@ -79,22 +93,13 @@
                 <label for="bringing">Will you be bringing anything?</label>
                 <input type="text" id="bringing" name="bringing">
 
-                <label for="pajama">Are you aware that this is a pajama party?</label>
+                <label for="pumpPaint">Would you like a small pumpkin to paint?</label>
                 <div>
-                    <label for="pajamaYes">Yes</label>
-                    <input type="radio" id="pajamaYes" name="pajama" value="yes">
+                    <label for="pumpPaintYes">Yes</label>
+                    <input type="radio" id="pumpPaintYes" name="pumpPaint" value="yes">
 
-                    <label for="pajamaNo">No</label>
-                    <input type="radio" id="pajamaNo" name="pajama" value="no">
-                </div>
-
-                <label for="yankeeSwap">Are you participating in the $5 thrift-only Yankee Swap?</label>
-                <div>
-                    <label for="yankeeSwapYes">Yes</label>
-                    <input type="radio" id="yankeeSwapYes" name="yankeeSwap" value="yes">
-
-                    <label for="yankeeSwapNo">No</label>
-                    <input type="radio" id="yankeeSwapNo" name="yankeeSwap" value="no">
+                    <label for="pumpPaintNo">No</label>
+                    <input type="radio" id="pumpPaintNo" name="pumpPaint" value="no">
                 </div>
             </div>
 
@@ -104,8 +109,8 @@
 
     <script>
         function showAdditionalFields() {
-            const audio = new Audio("silent_night.mp3");
-            audio.play()
+            // const audio = new Audio("silent_night.mp3");
+            // audio.play()
 
             const selectedGuest = document.getElementById('guests').value;
             const additionalFields = document.querySelector('.additional-fields');
@@ -117,6 +122,5 @@
             }
         }
     </script>
-    <script defer src="snowfall.js"></script>
 </body>
 </html>

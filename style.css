@@ -1,11 +1,13 @@
-body, html {
+body, html 
+{
     margin: 0;
     padding: 0;
     height: 100%;
 }
 
 /* Default background for computers */
-.background {
+.background 
+{
     background-image: url('images/background.png');
     background-size: cover;
     background-position: center;
@@ -20,13 +22,16 @@ body, html {
 }
 
 /* Background for phones (max-width: 767px) */
-@media only screen and (max-width: 767px) {
-    .background {
+@media only screen and (max-width: 767px) 
+{
+    .background 
+    {
         background-image: url('images/phone_background.png');
     }
 }
 
-.content {
+.content 
+{
     padding: 20px;
     box-sizing: border-box;
     position: relative;
@@ -36,9 +41,10 @@ body, html {
 }
 
 h1 {
-    font-family: 'Lobster', cursive;
-    font-size: 3.5em;
+    font-family: 'Lacquer';
+    font-size: 6em;
     margin-bottom: 10px;
+    color: #f0a214;
 }
 
 
@@ -55,8 +61,9 @@ p.small
     margin-bottom: 20px;
 }
 
-.rsvp-button {
-    background-color: #BF1C06;
+.rsvp-button 
+{
+    background-color: #f0a214;
     color: white;
     padding: 10px 20px;
     font-size: 1.2em;
@@ -67,71 +74,45 @@ p.small
 }
 
 .rsvp-button:hover {
-    background-color: #BF1C06;
+    background-color: #d2571e;
 }
 
-.event-details {
+.event-details 
+{
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     margin-bottom: 20px;
-    font-size: 1.3em;
+    font-size: 1.5em;
 }
 
-.event-location {
+.event-location 
+{
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 20px;
     font-size: 1.0em;
 }
 
-.rsvp-info {
+.rsvp-info 
+{
     margin-top: 20px;
 }
 
-h2 {
+h2 
+{
     font-size: 1.8em;
     margin-bottom: 10px;
 }
 
-ul {
+ul 
+{
     list-style-type: none;
     padding: 0;
 }
 
-li {
+li 
+{
+    font-family: 'Montserrat', sans-serif;
     margin-bottom: 8px;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-#snowflakes-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-.snowflake {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    font-size: 1.5em;
-    color: #fff;
-    background: transparent url('images/snowflake.png') no-repeat center center;
-    background-size: contain;
-    animation: fall linear infinite;
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(100vh);
-    }
-}
-
-/* Style for the play/pause icon */
-#playPauseIcon {
-    width: 1.5em;
-    height: 1.5em;
-    margin-right: 5px;
+    font-size: 1.0em;
+    text-align: center;
 }
