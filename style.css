@@ -47,7 +47,6 @@ h1 {
     color: #f0a214;
 }
 
-
 p {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.0em;
@@ -115,4 +114,36 @@ li
     margin-bottom: 8px;
     font-size: 1.0em;
     text-align: center;
+}
+
+.additional-fields div 
+{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.additional-fields label 
+{
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 1em;
+}
+
+.additional-fields input[type="radio"] 
+{
+    margin-right: 5px;
+}
+
+@media only screen and (max-width: 767px) 
+{
+    .additional-fields div 
+    {
+        display: block;
+        text-align: left;
+    }
+
+    .additional-fields label 
+    {
+        font-size: 1.2em;
+    }
 }
