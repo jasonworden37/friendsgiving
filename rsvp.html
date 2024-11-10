@@ -63,15 +63,28 @@
 </head>
 <body>
     <div class="background"></div>
-    <form action="https://formspree.io/f/xyzgakdl" method="POST">
+    <form action="https://formspree.io/f/xnnqvjbd" method="POST">
         <div class="content">
             <h2>RSVP Form</h2>
             <label for="guestName">Select your name from the guest list</label>
             <select id="guests" name="guests" required onchange="showAdditionalFields()">
                 <option value="" disabled selected>Select a guest</option>
                 <!-- Add the guest names dynamically here -->
-                <option value="Jacob">Jacob Grass</option>
-                <option value="Clarence">Clarence Worden</option>
+                <option value="Jacob Grass">Jacob Grass</option>
+                <option value="Kalahn">Kalahn</option>
+                <option value="Brendon">Brendon</option>
+                <option value="Jonah">Jonah</option>
+                <option value="Josh Robinson">Josh Robinson</option>
+                <option value="Becky Worden & Kyle">Becky Worden and Kyle</option>
+                <option value="Rachel Worden & Skylar">Rachel Worden and Skylar</option>
+                <option value="Adam & Hayley Noyes">Adam & Hayley Noyes</option>
+                <option value="Cassie and Jake">Cassie & Jake</option>
+                <option value="Alyssa and Evan">Alyssa & Evan</option>
+                <option value="Cullen and Erin">Cullen & Erin</option>
+                <option value="Sina">Sina</option>
+                <option value="Ayden">Ayden</option>
+
+
             </select>
 
             <!-- Additional fields for selected guest -->
@@ -85,17 +98,8 @@
                     <input type="radio" id="attendanceNo" name="attendance" value="no">
                 </div>
 
-                <label for="bringing">What if anything will you be bringing?</label>
+                <label for="bringing">What will you be bringing? (try to bring something that doesnt require reheating in the over)</label>
                 <input type="text" id="bringing" name="bringing">
-
-                <label for="pumpPaint">Would you like a small pumpkin to paint?</label>
-                <div>
-                    <label for="pumpPaintYes">Yes</label>
-                    <input type="radio" id="pumpPaintYes" name="pumpPaint" value="yes">
-
-                    <label for="pumpPaintNo">No</label>
-                    <input type="radio" id="pumpPaintNo" name="pumpPaint" value="no">
-                </div>
             </div>
 
             <button type="submit" class="rsvp-button">Submit</button>
