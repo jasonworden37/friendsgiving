@@ -6,7 +6,12 @@
     <title>RSVP Form</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Additional styles for the RSVP form */
+        /* Fixes weird sarfari radio button issues*/
+        input[type="radio"] 
+        {
+            width: auto !important;
+        }
+
         form 
         {
             font-family: 'Montserrat', sans-serif;
@@ -81,7 +86,9 @@
                 <option value="JoshRobinson">Josh Robinson</option>
                 <option value="BrendonButland">Brendon Butland</option>
                 <option value="AbbyDom">Abby & Dom</option>
-
+                <option value="Nathan">Nathan Cornoni</option>
+                <option value="Chris">Chris</option>
+                <option value="Ben">Ben</option>
             </select>
 
             <!-- Additional fields for selected guest -->
