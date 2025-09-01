@@ -71,6 +71,16 @@
                 <option value="" disabled selected>Select a guest</option>
                 <!-- Add the guest names dynamically here -->
                 <option value="Jacob Grass">Jacob Grass</option>
+                <option value="RachelSkylar">Rachel & Skylar</option>
+                <option value="KalahnJake">Kalahn & Jake</option>
+                <option value="JonahBurd">Jonah Burd</option>
+                <option value="AydenJacobs">Ayden Jacobs</option>
+                <option value="BeckyKyle">Becky & Kyle</option>
+                <option value="MaddyDakota">Maddy & Dakota</option>
+                <option value="SarahChase">Sarah & Chase</option>
+                <option value="JoshRobinson">Josh Robinson</option>
+                <option value="BrendonButland">Brendon Butland</option>
+                <option value="AbbyDom">Abby & Dom</option>
 
             </select>
 
@@ -86,21 +96,27 @@
                 </div>
             </div>
 
+            <label for="note">Additional Notes</label>
+            <input type="text" id="note" name="note">
+
             <button type="submit" class="rsvp-button">Submit</button>
         </div>
     </form>
 
     <script>
-        function showAdditionalFields() {
+        function showAdditionalFields()
+        {
             // const audio = new Audio("silent_night.mp3");
             // audio.play()
 
             const selectedGuest = document.getElementById('guests').value;
             const additionalFields = document.querySelector('.additional-fields');
 
-            if (selectedGuest !== "") {
+            if (selectedGuest !== "")
+            {
                 additionalFields.classList.add('visible');
-            } else {
+            } else
+            {
                 additionalFields.classList.remove('visible');
             }
         }
