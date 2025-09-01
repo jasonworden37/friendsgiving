@@ -71,7 +71,7 @@
     <form action="https://formspree.io/f/xyzgakdl" method="POST">
         <div class="content">
             <h2>RSVP Form</h2>
-            <label for="guestName">Select your name from the guest list</label>
+            <label for="guestName">Select your name(s)</label>
             <select id="guests" name="guests" required onchange="showAdditionalFields()">
                 <option value="" disabled selected>Select a guest</option>
                 <!-- Add the guest names dynamically here -->
@@ -111,10 +111,9 @@
                     <label for="pumpkineNo">No</label>
                     <input type="radio" id="pumpkinNo" name="pumpkin" value="No">
                 </div>
-            </div>
-            
 
-            <input type="text" id="note" name="note" placeholder="Notes">
+                <input type="text" id="note" name="note" placeholder="Notes">
+            </div>
 
             <button type="submit" class="rsvp-button">Submit</button>
         </div>
