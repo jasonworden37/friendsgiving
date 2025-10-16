@@ -25,7 +25,7 @@ h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 6em;
     margin-bottom: 10px;
-    color: #b63f2f;
+    color: #dd8a0d;
 }
 
 /* Background for phones (max-width: 767px) */
@@ -40,7 +40,7 @@ h1 {
         font-family: 'Montserrat', sans-serif;
         font-size: 3em;
         margin-bottom: 10px;
-        color: #b63f2f;
+        color: #dd8a0d;
     }
 }
 
@@ -69,7 +69,7 @@ p.small
 
 .rsvp-button 
 {
-    background-color: #b63f2f;
+    background-color: #dd8a0d;
     color: white;
     padding: 10px 20px;
     font-size: 1.2em;

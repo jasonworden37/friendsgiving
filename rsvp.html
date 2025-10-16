@@ -6,7 +6,12 @@
     <title>RSVP Form</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Additional styles for the RSVP form */
+        /* Fixes weird sarfari radio button issues*/
+        input[type="radio"] 
+        {
+            width: auto !important;
+        }
+
         form 
         {
             font-family: 'Montserrat', sans-serif;
@@ -63,15 +68,25 @@
 </head>
 <body>
     <div class="background"></div>
-    <form action="https://formspree.io/f/xnnqvjbd" method="POST">
+    <form action="https://formspree.io/f/xyzgakdl" method="POST">
         <div class="content">
             <h2>RSVP Form</h2>
-            <label for="guestName">Select your name from the guest list</label>
+            <label for="guestName">Select your name(s)</label>
             <select id="guests" name="guests" required onchange="showAdditionalFields()">
                 <option value="" disabled selected>Select a guest</option>
                 <!-- Add the guest names dynamically here -->
                 <option value="Jacob Grass">Jacob Grass</option>
-
+                <option value="RachelSkylar">Rachel & Skylar</option>
+                <option value="KalahnJake">Kalahn & Jake</option>
+                <option value="JonahBurd">Jonah Burd</option>
+                <option value="AydenJacobs">Ayden Jacobs</option>
+                <option value="BeckyKyle">Becky & Kyle</option>
+                <option value="SarahChase">Sarah & Chase</option>
+                <option value="JoshRobinson">Josh Robinson</option>
+                <option value="BrendonButland">Brendon Butland</option>
+                <option value="ChrisBuck">Chris Buck</option>
+                <option value="Ben">Ben</option>
+                <option value="JohnRooney">John Rooney & Hannah</option>
             </select>
 
             <!-- Additional fields for selected guest -->
@@ -79,14 +94,23 @@
                 <label for="attendance">Will you be attending?</label>
                 <div>
                     <label for="attendanceYes">Yes</label>
-                    <input type="radio" id="attendanceYes" name="attendance" value="yes">
+                    <input type="radio" id="attendanceYes" name="attendance" value="Yes">
 
                     <label for="attendanceNo">No</label>
-                    <input type="radio" id="attendanceNo" name="attendance" value="no">
+                    <input type="radio" id="attendanceNo" name="attendance" value="No">
                 </div>
 
-                <label for="bringing">What will you be bringing? (try to bring something that doesn't require reheating in the oven)</label>
-                <input type="text" id="bringing" name="bringing">
+                <!-- Additional fields for pumpkin selecting -->
+                <label for="pumpkin">Will you be participating in pumpkin painting?</label>
+                <div>
+                    <label for="pumpkinYes">Yes</label>
+                    <input type="radio" id="pumpkinYes" name="pumpkin" value="Yes">
+
+                    <label for="pumpkineNo">No</label>
+                    <input type="radio" id="pumpkinNo" name="pumpkin" value="No">
+                </div>
+
+                <input type="text" id="note" name="note" placeholder="Notes">
             </div>
 
             <button type="submit" class="rsvp-button">Submit</button>
@@ -94,16 +118,19 @@
     </form>
 
     <script>
-        function showAdditionalFields() {
+        function showAdditionalFields()
+        {
             // const audio = new Audio("silent_night.mp3");
             // audio.play()
 
             const selectedGuest = document.getElementById('guests').value;
             const additionalFields = document.querySelector('.additional-fields');
 
-            if (selectedGuest !== "") {
+            if (selectedGuest !== "")
+            {
                 additionalFields.classList.add('visible');
-            } else {
+            } else
+            {
                 additionalFields.classList.remove('visible');
             }
         }
