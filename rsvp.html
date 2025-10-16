@@ -85,7 +85,6 @@
                 <option value="JoshRobinson">Josh Robinson</option>
                 <option value="BrendonButland">Brendon Butland</option>
                 <option value="ChrisBuck">Chris Buck</option>
-                <option value="Ben">Ben</option>
                 <option value="JohnRooney">John Rooney & Hannah</option>
             </select>
 
@@ -100,17 +99,9 @@
                     <input type="radio" id="attendanceNo" name="attendance" value="No">
                 </div>
 
-                <!-- Additional fields for pumpkin selecting -->
-                <label for="pumpkin">Will you be participating in pumpkin painting?</label>
-                <div>
-                    <label for="pumpkinYes">Yes</label>
-                    <input type="radio" id="pumpkinYes" name="pumpkin" value="Yes">
+                <label for="bringing">What will you be bringing?</label>
+                <input type="text" id="bringing" name="bringing">
 
-                    <label for="pumpkineNo">No</label>
-                    <input type="radio" id="pumpkinNo" name="pumpkin" value="No">
-                </div>
-
-                <input type="text" id="note" name="note" placeholder="Notes">
             </div>
 
             <button type="submit" class="rsvp-button">Submit</button>
@@ -129,7 +120,8 @@
             if (selectedGuest !== "")
             {
                 additionalFields.classList.add('visible');
-            } else
+            } 
+            else
             {
                 additionalFields.classList.remove('visible');
             }
