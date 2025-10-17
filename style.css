@@ -7,14 +7,14 @@ html, body {
     overflow-x: hidden;
 }
 
-/* Wrapper that contains both background and content */
+/* Page wrapper ensures natural scrolling */
 .page-wrapper {
     position: relative;
     min-height: 100vh;
     width: 100%;
 }
 
-/* Background image setup */
+/* Default background for desktop */
 .background {
     background-image: url('images/background.png');
     background-size: cover;
@@ -29,7 +29,14 @@ html, body {
     filter: brightness(60%);
 }
 
-/* Content styles */
+/* Background override for phones (max-width: 767px) */
+@media only screen and (max-width: 767px) {
+    .background {
+        background-image: url('images/phone_background.png');
+    }
+}
+
+/* Main content */
 .content {
     padding: 20px;
     box-sizing: border-box;
@@ -41,7 +48,7 @@ html, body {
     overflow-x: hidden;
 }
 
-/* Responsive heading */
+/* Responsive header */
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 6em;
@@ -53,14 +60,13 @@ h1 {
     line-height: 1.1;
 }
 
-/* Scale h1 down on small screens (e.g., iPhones) */
+/* Smaller header on phones */
 @media only screen and (max-width: 767px) {
     h1 {
         font-size: 2.2em;
     }
 }
 
-/* Other content */
 p {
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
@@ -121,7 +127,7 @@ li {
     text-align: center;
 }
 
-/* Form-related styling if needed */
+/* Optional: form or radio input styling */
 .additional-fields div {
     display: inline-block;
     margin-bottom: 10px;
@@ -136,7 +142,7 @@ li {
     margin-right: 10px;
 }
 
-/* Responsive tweaks */
+/* Mobile tweaks */
 @media only screen and (max-width: 767px) {
     .additional-fields div {
         display: inline-block;
