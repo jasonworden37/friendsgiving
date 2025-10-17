@@ -6,51 +6,50 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
-    
     <title>Friendsgiving</title>
 </head>
 <body>
+    <div class="page-wrapper">
+        <div class="background"></div>
+        <div class="content">
+            <h1>Friendsgiving</h1>
+            <div class="event-details">
+                <p>Friday, November 14th, 2025 @ 6:00pm</p>
+            </div>
+            <div class="location-details">
+                <p>16 Chestnut Street, Exeter, NH</p>
+            </div>
+            <p>Join us for a Thanksgiving feast and games!</p>
 
-    <div class="background"></div>
-    <div class="content">
-        <h1>Friendsgiving</h1>
-        <div class="event-details">
-            <p>Friday, November 14th, 2025 @ 6:00pm</p>
-        </div>
-        <div class="location-details">
-            <p>16 Chestnut Street, Exeter, NH</p>
-        </div>
-        <p>Join us for a Thanksgiving feast and games!</p>
+            <button onclick="redirectToRSVP()" class="rsvp-button">Click to RSVP</button>
 
-        <button onclick="redirectToRSVP()" class="rsvp-button">Click to RSVP</button>
-
-        <div class="rsvp-info">
-            <ul id="bring-list"></ul>
-              <li>Kendra & Jason - Cookies</li>
-              <li>Kendra & Jason - Cookies</li>
-              <li>Kendra & Jason - Cookies</li>
-              <li>Kendra & Jason - Cookies</li>
-              <li>Kendra & Jason - Cookies</li>
-              <li>Kendra & Jason - Cookies</li>
-              <li>Kendra & Jason - Cookies</li>
-              <li>Kendra & Jason - Cookies</li>
-              <li>Kendra & Jason - Cookies</li>
-              <li>Kendra & Jason - Cookies</li>
-              <li>Kendra & Jason - Cookies</li>
-              <li>Kendra & Jason - Cookies</li>
-              <li>Kendra & Jason - Cookies</li>
-              <li>Kendra & Jason - Cookies</li>
-              <li>Kendra & Jason - Cookies</li>
+            <div class="rsvp-info">
+                <ul id="bring-list">
+                    <li>Kendra & Jason - Cookies</li>
+                    <li>Kendra & Jason - Cookies</li>
+                    <li>Kendra & Jason - Cookies</li>
+                    <li>Kendra & Jason - Cookies</li>
+                    <li>Kendra & Jason - Cookies</li>
+                    <li>Kendra & Jason - Cookies</li>
+                    <li>Kendra & Jason - Cookies</li>
+                    <li>Kendra & Jason - Cookies</li>
+                    <li>Kendra & Jason - Cookies</li>
+                    <li>Kendra & Jason - Cookies</li>
+                    <li>Kendra & Jason - Cookies</li>
+                    <li>Kendra & Jason - Cookies</li>
+                    <li>Kendra & Jason - Cookies</li>
+                    <li>Kendra & Jason - Cookies</li>
+                    <li>Kendra & Jason - Cookies</li>
+                </ul>
+            </div>
         </div>
     </div>
 
     <script>
-        function redirectToRSVP()
-        {
+        function redirectToRSVP() {
             window.location.href = "rsvp.html";
         }
     </script>
