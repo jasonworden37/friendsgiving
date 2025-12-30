@@ -14,24 +14,24 @@ const categories = [
 // =====================
 const questions = [
   [
-    { question: "images/jacob_booze.png", answer: "images/jacob_answer.png", done: true, read: false },
-    { question: "Quote #2", answer: "Answer", done: false, read: false },
-    { question: "Quote #3", answer: "Answer", done: false, read: false },
-    { question: "Quote #4", answer: "Answer", done: false, read: false },
+    { question: "images/cant_believe_ur_married.JPEG", answer: "Kalahn", done: true, read: false },
+    { question: "images/coffee_no_good.JPEG", answer: "Kendra", done: true, read: false },
+    { question: "images/my_dad_picked_me_up.JPEG", answer: "Kalahn", done: true, read: false },
+    { question: "images/jacob_booze.png", answer: "Jacob Grass", done: true, read: false },
     { question: "Quote #5", answer: "Answer", done: false, read: false }
   ],
   [
     { question: "Text #1", answer: "Answer", done: false, read: false },
-    { question: "Text #2", answer: "Answer", done: false, read: false },
-    { question: "Text #3", answer: "Answer", done: false, read: false },
-    { question: "Text #4", answer: "Answer", done: false, read: false },
-    { question: "Text #5", answer: "Answer", done: false, read: false }
+    { question: "images/jonah_ex.jpg", answer: "Jonah", done: true, read: false },
+    { question: "images/emotionally_weak.JPEG", answer: "Emma", done: true, read: false },
+    { question: "images/jake_kal_ex.JPEG", answer: "Kalahn", done: true, read: false },
+    { question: "images/sarah_ex.JPEG", answer: "Sarah", done: true, read: false }
   ],
   [
     { question: "Lore #1", answer: "Answer", done: false, read: false },
     { question: "Lore #2", answer: "Answer", done: false, read: false },
     { question: "Lore #3", answer: "Answer", done: false, read: false },
-    { question: "Lore #4", answer: "Answer", done: false, read: false },
+    { question: "I can wiggle my ears", answer: "Jonah Burd", done: true, read: false },
     { question: "Lore #5", answer: "Answer", done: false, read: false }
   ],
   [
@@ -51,7 +51,7 @@ const questions = [
 ];
 
 function isImage(v) {
-  return typeof v === "string" && v.match(/\.(png|jpg|gif)$/i);
+  return typeof v === "string" && v.match(/\.(png|jpg|gif|JPEG)$/i);
 }
 
 // =====================
