@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
-    
-    <title>Pumpkin Party</title>
+  <meta charset="UTF-8">
+  <title>🎉 NYE Jeopardy 🎉</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="app">
 
-    <div class="background"></div>
-    <div class="content">
-        <h1>Pumpkin Party</h1>
-        <div class="event-details">
-            <p>Saturday, September 27th, 2025 @ 6:00pm</p>
-        </div>
-        <div class="location-details">
-            <p>17 Greenleaf Drive, Seabrook, NH</p>
-        </div>
-        <p>Join us for festive drinks & apps, sack races, a fire & more</p>
+  <!-- Teams sidebar -->
+  <aside id="teams">
+    <h2>Teams</h2>
+    <div id="teamsList"></div>
+    <button id="addTeamButton">+ Add Team</button>
+  </aside>
 
-        <button onclick="redirectToRSVP()" class="rsvp-button">Click to RSVP</button>
+  <!-- Main board -->
+  <main id="main">
+    <header>
+      <h1>🎉 NYE Jeopardy 🎉</h1>
+      <div id="countdown"></div>
+    </header>
 
-        <div class="rsvp-info">
-            <ul id="bring-list"></ul>
+    <div id="jeopardyBoard"></div>
+  </main>
 
-        </div>
-    </div>
+</div>
 
-    <script>
-        function redirectToRSVP()
-        {
-            window.location.href = "rsvp.html";
-        }
-    </script>
+<!-- Question Modal -->
+<div id="questionModal" class="hidden">
+  <div class="modal-content">
+    <div id="questionText"></div>
+    <button id="revealButton">Show Answer</button>
+    <div id="answerText" class="hidden"></div>
+    <button id="closeButton" class="hidden">Close</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

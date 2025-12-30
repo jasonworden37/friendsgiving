@@ -1,163 +1,216 @@
-body, html 
-{
-    margin: 0;
-    padding: 0;
-    height: 100%;
+/* ---------------------------
+   Global styles
+---------------------------- */
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-/* Default background for computers */
-.background 
-{
-    background-image: url('images/background.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    filter: brightness(60%);
+body {
+  margin: 0;
+  background: #0a1f44; /* Dark Jeopardy-like blue */
+  color: #fff;
 }
 
-h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 6em;
-    margin-bottom: 10px;
-    color: #dd8a0d;
+/* App layout */
+#app {
+  display: flex;
+  height: 100vh;
 }
 
-/* Background for phones (max-width: 767px) */
-@media only screen and (max-width: 767px) 
-{
-    .background 
-    {
-        background-image: url('images/phone_background.png');
-    }
-
-    h1 {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 3em;
-        margin-bottom: 10px;
-        color: #dd8a0d;
-    }
+/* ---------------------------
+   Teams sidebar
+---------------------------- */
+#teams {
+  width: 220px;
+  background: #07112a;
+  padding: 10px;
+  border-right: 2px solid #f5c518;
 }
 
-.content 
-{
-    padding: 20px;
-    box-sizing: border-box;
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    color: #fff;
+#teams h2 {
+  margin-top: 0;
+  text-align: center;
+  color: #f5c518;
 }
 
-p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.0em;
-    margin-bottom: 20px;
+.team {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 6px;
 }
 
-p.small
-{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.8em;
-    margin-bottom: 20px;
+.team-name,
+.team-score {
+  background: #0a1f44;
+  padding: 4px;
+  border: 1px solid #f5c518;
+  border-radius: 3px;
+  min-width: 50px;
+  color: #fff;
 }
 
-.rsvp-button 
-{
-    background-color: #dd8a0d;
-    color: white;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+.team-name {
+  flex: 1;
 }
 
-.rsvp-button:hover {
-    background-color: #d2571e;
+.team-score {
+  width: 50px;
+  text-align: right;
 }
 
-.event-details 
-{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    margin-bottom: 20px;
-    font-size: 1.5em;
+.team-color {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #f5c518;
+  cursor: pointer;
 }
 
-.event-location 
-{
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 20px;
-    font-size: 1.0em;
+.team button {
+  background: #c00;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
 }
 
-.rsvp-info 
-{
-    margin-top: 20px;
+#addTeamButton {
+  width: 100%;
+  margin-top: 10px;
+  background: #f5c518;
+  color: #001f5b;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 3px;
 }
 
-h2 
-{
-    font-size: 1.8em;
-    margin-bottom: 10px;
+/* ---------------------------
+   Main content
+---------------------------- */
+#main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-ul 
-{
-    list-style-type: none;
-    padding: 0;
+header {
+  text-align: center;
+  padding: 10px;
 }
 
-li 
-{
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 8px;
-    font-size: 1.0em;
-    text-align: center;
+header h1 {
+  font-size: 32px;
+  margin: 0;
 }
 
-.additional-fields div 
-{
-    display: inline-block;
-    margin-bottom: 10px;
+#countdown {
+  font-size: 20px;
+  margin-top: 5px;
+  font-weight: bold;
 }
 
-.additional-fields label 
-{
-    font-size: 1em;
+/* ---------------------------
+   Jeopardy board
+---------------------------- */
+#jeopardyBoard {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto repeat(5, 1fr);
+  gap: 6px;
+  padding: 10px;
+  background: #001f5b; /* deep blue */
 }
 
-.additional-fields input[type="radio"] 
-{
-    margin-left: 5px;
-    margin-right: 10px;
+.category {
+  background: #002f7a; /* slightly lighter blue */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6px;
+  font-weight: bold;
+  color: #f5c518; /* gold text */
+  border: 2px solid #f5c518;
+  font-size: 14px;
 }
 
-/* Fix the alignment for mobile */
-@media only screen and (max-width: 767px) 
-{
-    .additional-fields div 
-    {
-        display: inline-block;
-        text-align: left;
-        margin-bottom: 10px;
-    }
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  cursor: pointer;
+  background: #0040a0; /* Jeopardy blue */
+  color: #f5c518; /* gold numbers */
+  border: 2px solid #001f5b;
+  transition: transform 0.1s;
+}
 
-    .additional-fields label 
-    {
-        font-size: 1.2em;
-    }
+.cell:hover {
+  transform: scale(1.05);
+}
 
-    .additional-fields input[type="radio"] 
-    {
-        margin-left: 5px;
-        margin-right: 10px;
-    }
+.cell.used {
+  background: #001f5b; /* dark blue when used */
+  color: #555; /* dim text */
+  cursor: default;
+}
+
+/* ---------------------------
+   Modal
+---------------------------- */
+#questionModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+#questionModal:not(.hidden) {
+  display: flex;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.modal-content {
+  background: #07112a;
+  padding: 20px;
+  max-width: 600px;
+  text-align: center;
+  border-radius: 6px;
+  border: 2px solid #f5c518;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 400px;
+  border: 2px solid #f5c518;
+  border-radius: 6px;
+}
+
+button {
+  margin-top: 10px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  font-weight: bold;
+}
+
+#revealButton {
+  background: #f5c518;
+  color: #001f5b;
+}
+
+#closeButton {
+  background: #c00;
+  color: #fff;
 }
