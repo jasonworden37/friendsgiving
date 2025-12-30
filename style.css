@@ -23,9 +23,8 @@ body {
 ---------------------------- */
 #teams {
   width: 220px;
-  background: #07112a;
+  background: #07112a; /* dark blue sidebar */
   padding: 10px;
-  border-right: 2px solid #f5c518;
 }
 
 #teams h2 {
@@ -45,7 +44,6 @@ body {
 .team-score {
   background: #0a1f44;
   padding: 4px;
-  border: 1px solid #f5c518;
   border-radius: 3px;
   min-width: 50px;
   color: #fff;
@@ -58,13 +56,6 @@ body {
 .team-score {
   width: 50px;
   text-align: right;
-}
-
-.team-color {
-  width: 20px;
-  height: 20px;
-  border: 1px solid #f5c518;
-  cursor: pointer;
 }
 
 .team button {
@@ -85,6 +76,11 @@ body {
   cursor: pointer;
   font-weight: bold;
   border-radius: 3px;
+}
+
+/* Remove team color boxes */
+.team-color {
+  display: none;
 }
 
 /* ---------------------------

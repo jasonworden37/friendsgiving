@@ -1,4 +1,6 @@
-// Categories
+// =====================
+// CATEGORIES
+// =====================
 const categories = [
   "Who Said That?",
   "Texts from the past",
@@ -7,7 +9,9 @@ const categories = [
   "What happened Next?"
 ];
 
-// Questions (hardcoded, including images)
+// =====================
+// QUESTIONS (hardcoded)
+// =====================
 const questions = [
   [
     { question: "images/jacob_booze.png", answer: "images/jacob_answer.png" },
@@ -50,11 +54,14 @@ function isImage(v) {
   return typeof v === "string" && v.match(/\.(png|jpg|gif)$/i);
 }
 
-// Generate board
+// =====================
+// BOARD GENERATION
+// =====================
 function generateBoard() {
   const board = document.getElementById("jeopardyBoard");
   board.innerHTML = "";
 
+  // Category headers
   categories.forEach(c => {
     const div = document.createElement("div");
     div.className = "category";
@@ -62,6 +69,7 @@ function generateBoard() {
     board.appendChild(div);
   });
 
+  // Question cells
   for (let r = 0; r < 5; r++) {
     for (let c = 0; c < 5; c++) {
       const cell = document.createElement("div");
@@ -75,7 +83,9 @@ function generateBoard() {
   }
 }
 
-// Modal
+// =====================
+// MODAL HANDLING
+// =====================
 const modal = document.getElementById("questionModal");
 const questionText = document.getElementById("questionText");
 const answerText = document.getElementById("answerText");
@@ -121,7 +131,9 @@ revealButton.onclick = () => {
 
 closeButton.onclick = () => modal.classList.add("hidden");
 
-// Teams
+// =====================
+// TEAMS HANDLING
+// =====================
 const teamsList = document.getElementById("teamsList");
 const addTeamButton = document.getElementById("addTeamButton");
 let teams = [];
@@ -158,17 +170,6 @@ function renderTeams() {
     };
     enterToSave(score);
 
-    const color = document.createElement("div");
-    color.className = "team-color";
-    color.style.background = t.color;
-    color.onclick = () => {
-      const c = prompt("Color?", t.color);
-      if (c) {
-        t.color = c;
-        color.style.background = c;
-      }
-    };
-
     const del = document.createElement("button");
     del.textContent = "X";
     del.onclick = () => {
@@ -176,17 +177,19 @@ function renderTeams() {
       renderTeams();
     };
 
-    div.append(name, score, color, del);
+    div.append(name, score, del);
     teamsList.appendChild(div);
   });
 }
 
 addTeamButton.onclick = () => {
-  teams.push({ name: `Team ${teams.length + 1}`, score: 0, color: "#fff" });
+  teams.push({ name: `Team ${teams.length + 1}`, score: 0 });
   renderTeams();
 };
 
-// Countdown
+// =====================
+// NEW YEAR COUNTDOWN
+// =====================
 const countdownEl = document.getElementById("countdown");
 
 function updateCountdown() {
@@ -207,6 +210,8 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// Initialize
+// =====================
+// INITIALIZE BOARD AND TEAMS
+// =====================
 generateBoard();
 renderTeams();
