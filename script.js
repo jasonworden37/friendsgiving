@@ -10,43 +10,43 @@ const categories = [
 ];
 
 // =====================
-// QUESTIONS (hardcoded)
+// QUESTIONS (hardcoded with 'done' flag and 'read' flag)
 // =====================
 const questions = [
   [
-    { question: "images/jacob_booze.png", answer: "images/jacob_answer.png" },
-    { question: "Quote #2", answer: "Answer" },
-    { question: "Quote #3", answer: "Answer" },
-    { question: "Quote #4", answer: "Answer" },
-    { question: "Quote #5", answer: "Answer" }
+    { question: "images/jacob_booze.png", answer: "images/jacob_answer.png", done: true, read: false },
+    { question: "Quote #2", answer: "Answer", done: false, read: false },
+    { question: "Quote #3", answer: "Answer", done: false, read: false },
+    { question: "Quote #4", answer: "Answer", done: false, read: false },
+    { question: "Quote #5", answer: "Answer", done: false, read: false }
   ],
   [
-    { question: "Text #1", answer: "Answer" },
-    { question: "Text #2", answer: "Answer" },
-    { question: "Text #3", answer: "Answer" },
-    { question: "Text #4", answer: "Answer" },
-    { question: "Text #5", answer: "Answer" }
+    { question: "Text #1", answer: "Answer", done: false, read: false },
+    { question: "Text #2", answer: "Answer", done: false, read: false },
+    { question: "Text #3", answer: "Answer", done: false, read: false },
+    { question: "Text #4", answer: "Answer", done: false, read: false },
+    { question: "Text #5", answer: "Answer", done: false, read: false }
   ],
   [
-    { question: "Lore #1", answer: "Answer" },
-    { question: "Lore #2", answer: "Answer" },
-    { question: "Lore #3", answer: "Answer" },
-    { question: "Lore #4", answer: "Answer" },
-    { question: "Lore #5", answer: "Answer" }
+    { question: "Lore #1", answer: "Answer", done: false, read: false },
+    { question: "Lore #2", answer: "Answer", done: false, read: false },
+    { question: "Lore #3", answer: "Answer", done: false, read: false },
+    { question: "Lore #4", answer: "Answer", done: false, read: false },
+    { question: "Lore #5", answer: "Answer", done: false, read: false }
   ],
   [
-    { question: "Context #1", answer: "Answer" },
-    { question: "Context #2", answer: "Answer" },
-    { question: "Context #3", answer: "Answer" },
-    { question: "Context #4", answer: "Answer" },
-    { question: "Context #5", answer: "Answer" }
+    { question: "Context #1", answer: "Answer", done: false, read: false },
+    { question: "Context #2", answer: "Answer", done: false, read: false },
+    { question: "Context #3", answer: "Answer", done: false, read: false },
+    { question: "Context #4", answer: "Answer", done: false, read: false },
+    { question: "Context #5", answer: "Answer", done: false, read: false }
   ],
   [
-    { question: "Next #1", answer: "Answer" },
-    { question: "Next #2", answer: "Answer" },
-    { question: "Next #3", answer: "Answer" },
-    { question: "Next #4", answer: "Answer" },
-    { question: "Next #5", answer: "Answer" }
+    { question: "Next #1", answer: "Answer", done: false, read: false },
+    { question: "Next #2", answer: "Answer", done: false, read: false },
+    { question: "Next #3", answer: "Answer", done: false, read: false },
+    { question: "Next #4", answer: "Answer", done: false, read: false },
+    { question: "Next #5", answer: "Answer", done: false, read: false }
   ]
 ];
 
@@ -72,12 +72,23 @@ function generateBoard() {
   // Question cells
   for (let r = 0; r < 5; r++) {
     for (let c = 0; c < 5; c++) {
+      const q = questions[c][r];
       const cell = document.createElement("div");
       cell.className = "cell";
       cell.textContent = `$${(r + 1) * 100}`;
       cell.dataset.row = r;
       cell.dataset.col = c;
-      cell.onclick = () => showQuestion(r, c);
+
+      // Set initial color based on done/read
+      if (q.done && !q.read) {
+        cell.style.backgroundColor = "#0040a0"; // blue
+        cell.style.color = "#f5c518";          // gold
+      } else {
+        cell.style.backgroundColor = "#555";   // gray
+        cell.style.color = "#ccc";
+      }
+
+      cell.onclick = () => showQuestion(r, c, cell);
       board.appendChild(cell);
     }
   }
@@ -92,28 +103,38 @@ const answerText = document.getElementById("answerText");
 const revealButton = document.getElementById("revealButton");
 const closeButton = document.getElementById("closeButton");
 let currentCell = null;
+let currentQ = null;
 
-function showQuestion(r, c) {
-  currentCell = document.querySelector(`.cell[data-row="${r}"][data-col="${c}"]`);
-  const q = questions[c][r];
+function showQuestion(r, c, cell) {
+  currentCell = cell;
+  currentQ = questions[c][r];
+
+  // Mark as read if not already
+  currentQ.read = true;
+
+  // Update color to gray if it was blue
+  if (!currentQ.done || currentQ.read) {
+    currentCell.style.backgroundColor = "#555";
+    currentCell.style.color = "#ccc";
+  }
 
   questionText.innerHTML = "";
   answerText.innerHTML = "";
 
-  if (isImage(q.question)) {
+  if (isImage(currentQ.question)) {
     const img = document.createElement("img");
-    img.src = q.question;
+    img.src = currentQ.question;
     questionText.appendChild(img);
   } else {
-    questionText.textContent = q.question;
+    questionText.textContent = currentQ.question;
   }
 
-  if (isImage(q.answer)) {
+  if (isImage(currentQ.answer)) {
     const img = document.createElement("img");
-    img.src = q.answer;
+    img.src = currentQ.answer;
     answerText.appendChild(img);
   } else {
-    answerText.textContent = q.answer;
+    answerText.textContent = currentQ.answer;
   }
 
   answerText.classList.add("hidden");
@@ -126,7 +147,6 @@ revealButton.onclick = () => {
   answerText.classList.remove("hidden");
   revealButton.classList.add("hidden");
   closeButton.classList.remove("hidden");
-  currentCell.classList.add("used");
 };
 
 closeButton.onclick = () => modal.classList.add("hidden");
