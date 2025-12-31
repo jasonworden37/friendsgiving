@@ -16,7 +16,7 @@ const questions = [
   [
     { question: "images/becky_gift.jpg", answer: "Becky", done: true, read: false },
     { question: "images/cant_believe_ur_married.JPEG", answer: "Kalahn", done: true, read: false },
-    { question: "images/coffee_no_good.JPEG", answer: "Kendra", done: true, read: false },
+    { question: "images/coffee_no_good.JPEG", answer: "Jason", done: true, read: false },
     { question: "images/my_dad_picked_me_up.JPEG", answer: "Kalahn", done: true, read: false },
     { question: "", answer: "", done: false, read: false }
   ],
@@ -28,7 +28,7 @@ const questions = [
     { question: "images/sarah_ex.JPEG", answer: "Sarah", done: true, read: false }
   ],
   [
-    { question: "Lore #1", answer: "Answer", done: false, read: false },
+    { question: "I used to have purple hair", answer: "Reese", done: true, read: false },
     { question: "I was born with no wisdom teeth", answer: "Sarah", done: true, read: false },
     { question: "I can wiggle my ears", answer: "Jonah", done: true, read: false },
     { question: "I have drank people's fermented spit", answer: "Kalahn", done: true, read: false },
