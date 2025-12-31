@@ -45,7 +45,7 @@ const questions = [
     { question: "images/kal_jacob_high.PNG", answer: "Kalahn & Jacob", done: true, read: false },
     { question: "images/becky_kyle_no_location.jpg", answer: "Becky & Kyle", done: true, read: false },
     { question: "images/becky_jason_halloween.jpg", answer: "Becky & Jason", done: true, read: false },
-    { question: "Next #5", answer: "Answer", done: false, read: false },
+    { question: "images/jonah_sarah_hate.jpg", answer: "Jonah & Sarah", done: true, read: false },
     { question: "images/jacob_booze.png", answer: "Jacob & Jason", done: true, read: false }
   ]
 ];
