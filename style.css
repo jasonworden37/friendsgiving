@@ -8,7 +8,7 @@
 
 body {
   margin: 0;
-  background: #0a1f44; /* Dark Jeopardy-like blue */
+  background: #0a1f44;
   color: #fff;
 }
 
@@ -23,7 +23,7 @@ body {
 ---------------------------- */
 #teams {
   width: 220px;
-  background: #07112a; /* dark blue sidebar */
+  background: #07112a;
   padding: 10px;
 }
 
@@ -36,7 +36,7 @@ body {
 .team {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   margin-bottom: 6px;
 }
 
@@ -45,7 +45,6 @@ body {
   background: #0a1f44;
   padding: 4px;
   border-radius: 3px;
-  min-width: 50px;
   color: #fff;
 }
 
@@ -76,11 +75,6 @@ body {
   cursor: pointer;
   font-weight: bold;
   border-radius: 3px;
-}
-
-/* Remove team color boxes */
-.team-color {
-  display: none;
 }
 
 /* ---------------------------
@@ -118,42 +112,67 @@ header h1 {
   grid-template-rows: auto repeat(5, 1fr);
   gap: 6px;
   padding: 10px;
-  background: #001f5b; /* deep blue */
+  background: #001f5b;
 }
 
 .category {
-  background: #002f7a; /* slightly lighter blue */
+  position: relative;
+  background: #002f7a;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 6px;
   font-weight: bold;
-  color: #f5c518; /* gold text */
+  color: #f5c518;
   border: 2px solid #f5c518;
   font-size: 14px;
 }
 
+/* ---------------------------
+   Category tooltip (ABOVE)
+---------------------------- */
+.category::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -65px;              /* ABOVE the category */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #07112a;
+  color: #f5c518;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  width: 190px;
+  text-align: center;
+  border: 2px solid #f5c518;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 20;
+}
+
+.category:hover::after {
+  opacity: 1;
+}
+
+/* ---------------------------
+   Question cells
+---------------------------- */
 .cell {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 26px;
   cursor: pointer;
-  background: #0040a0; /* Jeopardy blue */
-  color: #f5c518; /* gold numbers */
+  background: #0040a0;
+  color: #f5c518;
   border: 2px solid #001f5b;
   transition: transform 0.1s;
 }
 
 .cell:hover {
   transform: scale(1.05);
-}
-
-.cell.used {
-  background: #001f5b; /* dark blue when used */
-  color: #555; /* dim text */
-  cursor: default;
 }
 
 /* ---------------------------
@@ -178,8 +197,8 @@ header h1 {
 
 .modal-content {
   background: #07112a;
-  padding: 20px;
-  max-width: 600px;
+  padding: 25px;
+  max-width: 700px;
   text-align: center;
   border-radius: 6px;
   border: 2px solid #f5c518;
@@ -192,10 +211,22 @@ header h1 {
   border-radius: 6px;
 }
 
+#questionText {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+#answerText {
+  font-size: 34px;
+  font-weight: bold;
+  color: #f5c518;
+  margin-top: 20px;
+}
+
 button {
   margin-top: 10px;
   cursor: pointer;
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 4px;
   border: none;
   font-weight: bold;

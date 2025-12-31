@@ -1,16 +1,16 @@
 // =====================
-// CATEGORIES
+// CATEGORIES + TOOLTIP TEXT
 // =====================
 const categories = [
-  "Who Said That?",
-  "Texts from the ex",
-  "Secret Lore",
-  "What happened Next?",
-  "Name Both Ends"
+  { title: "Who Said That?", desc: "A quote, text or message that someone at the party said" },
+  { title: "Texts from the ex", desc: "A screenshot from an ex" },
+  { title: "Secret Lore", desc: "Surprising, embarrassing, weird, or forgotten facts." },
+  { title: "What happened Next?", desc: "What immediately happened after the moment shown?" },
+  { title: "Name Both Ends", desc: "Identify BOTH people involved." }
 ];
 
 // =====================
-// QUESTIONS (hardcoded with 'done' flag and 'read' flag)
+// QUESTIONS
 // =====================
 const questions = [
   [
@@ -32,7 +32,7 @@ const questions = [
     { question: "I was born with no wisdom teeth", answer: "Sarah", done: true, read: false },
     { question: "I can wiggle my ears", answer: "Jonah", done: true, read: false },
     { question: "I have drank people's fermented spit", answer: "Kalahn", done: true, read: false },
-    { question: "When I was 4, I rode my christmas gift bike down that stairs", answer: "Austin", done: true, read: false }
+    { question: "When I was 4, I rode my christmas gift bike down the stairs", answer: "Austin", done: true, read: false }
   ],
   [
     { question: "images/jonah_barking.JPEG", answer: "Jonah started barking", done: true, read: false },
@@ -51,7 +51,7 @@ const questions = [
 ];
 
 function isImage(v) {
-  return typeof v === "string" && v.match(/\.(png|jpg|gif|JPEG)$/i);
+  return typeof v === "string" && v.match(/\.(png|jpg|jpeg|gif)$/i);
 }
 
 // =====================
@@ -61,30 +61,26 @@ function generateBoard() {
   const board = document.getElementById("jeopardyBoard");
   board.innerHTML = "";
 
-  // Category headers
-  categories.forEach(c => {
+  categories.forEach(cat => {
     const div = document.createElement("div");
     div.className = "category";
-    div.textContent = c;
+    div.textContent = cat.title;
+    div.dataset.tooltip = cat.desc;
     board.appendChild(div);
   });
 
-  // Question cells
   for (let r = 0; r < 5; r++) {
     for (let c = 0; c < 5; c++) {
       const q = questions[c][r];
       const cell = document.createElement("div");
       cell.className = "cell";
       cell.textContent = `$${(r + 1) * 100}`;
-      cell.dataset.row = r;
-      cell.dataset.col = c;
 
-      // Set initial color based on done/read
       if (q.done && !q.read) {
-        cell.style.backgroundColor = "#0040a0"; // blue
-        cell.style.color = "#f5c518";          // gold
+        cell.style.backgroundColor = "#0040a0";
+        cell.style.color = "#f5c518";
       } else {
-        cell.style.backgroundColor = "#555";   // gray
+        cell.style.backgroundColor = "#555";
         cell.style.color = "#ccc";
       }
 
@@ -95,28 +91,24 @@ function generateBoard() {
 }
 
 // =====================
-// MODAL HANDLING
+// MODAL
 // =====================
 const modal = document.getElementById("questionModal");
 const questionText = document.getElementById("questionText");
 const answerText = document.getElementById("answerText");
 const revealButton = document.getElementById("revealButton");
 const closeButton = document.getElementById("closeButton");
-let currentCell = null;
+
 let currentQ = null;
+let currentCell = null;
 
 function showQuestion(r, c, cell) {
-  currentCell = cell;
   currentQ = questions[c][r];
+  currentCell = cell;
 
-  // Mark as read if not already
   currentQ.read = true;
-
-  // Update color to gray if it was blue
-  if (!currentQ.done || currentQ.read) {
-    currentCell.style.backgroundColor = "#555";
-    currentCell.style.color = "#ccc";
-  }
+  currentCell.style.backgroundColor = "#555";
+  currentCell.style.color = "#ccc";
 
   questionText.innerHTML = "";
   answerText.innerHTML = "";
@@ -152,7 +144,7 @@ revealButton.onclick = () => {
 closeButton.onclick = () => modal.classList.add("hidden");
 
 // =====================
-// TEAMS HANDLING
+// TEAMS
 // =====================
 const teamsList = document.getElementById("teamsList");
 const addTeamButton = document.getElementById("addTeamButton");
@@ -208,7 +200,7 @@ addTeamButton.onclick = () => {
 };
 
 // =====================
-// NEW YEAR COUNTDOWN
+// COUNTDOWN
 // =====================
 const countdownEl = document.getElementById("countdown");
 
@@ -222,16 +214,16 @@ function updateCountdown() {
   const s = Math.floor(diff / 1000) % 60;
 
   countdownEl.textContent =
-    `${h.toString().padStart(2, "0")}h ` +
-    `${m.toString().padStart(2, "0")}m ` +
-    `${s.toString().padStart(2, "0")}s`;
+    `${h.toString().padStart(2,"0")}h ` +
+    `${m.toString().padStart(2,"0")}m ` +
+    `${s.toString().padStart(2,"0")}s`;
 }
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
 // =====================
-// INITIALIZE BOARD AND TEAMS
+// INIT
 // =====================
 generateBoard();
 renderTeams();
