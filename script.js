@@ -35,11 +35,11 @@ const questions = [
     { question: "When I was 4, I rode my christmas gift bike down that stairs", answer: "Austin", done: true, read: false }
   ],
   [
-    { question: "images/jonah_barking.PNG", answer: "Jonah started barking", done: true, read: false },
+    { question: "images/jonah_barking.JPEG", answer: "Jonah started barking", done: true, read: false },
     { question: "Context #2", answer: "Answer", done: false, read: false },
     { question: "images/jonah_puking.jpg", answer: "Jonah started puking", done: true, read: false },
     { question: "Context #4", answer: "Answer", done: false, read: false },
-    { question: "images/carlos_emma.jpg", answer: "Carlos freaked out on a dude", done: true, read: false }
+    { question: "images/carlos_emma.JPEG", answer: "Carlos freaked out on a dude", done: true, read: false }
   ],
   [
     { question: "images/kal_jacob_high.PNG", answer: "Kalahn & Jacob", done: true, read: false },
