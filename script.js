@@ -3,10 +3,10 @@
 // =====================
 const categories = [
   "Who Said That?",
-  "Texts from the past",
+  "Texts from the ex",
   "Secret Lore",
-  "Out of Context",
-  "What happened Next?"
+  "What happened Next?",
+  "Name Both Ends"
 ];
 
 // =====================
@@ -14,11 +14,11 @@ const categories = [
 // =====================
 const questions = [
   [
+    { question: "images/becky_gift.jpg", answer: "Becky", done: true, read: false },
     { question: "images/cant_believe_ur_married.JPEG", answer: "Kalahn", done: true, read: false },
     { question: "images/coffee_no_good.JPEG", answer: "Kendra", done: true, read: false },
     { question: "images/my_dad_picked_me_up.JPEG", answer: "Kalahn", done: true, read: false },
-    { question: "images/jacob_booze.png", answer: "Jacob Grass", done: true, read: false },
-    { question: "Quote #5", answer: "Answer", done: false, read: false }
+    { question: "", answer: "", done: false, read: false }
   ],
   [
     { question: "Text #1", answer: "Answer", done: false, read: false },
@@ -29,24 +29,24 @@ const questions = [
   ],
   [
     { question: "Lore #1", answer: "Answer", done: false, read: false },
-    { question: "Lore #2", answer: "Answer", done: false, read: false },
-    { question: "Lore #3", answer: "Answer", done: false, read: false },
-    { question: "I can wiggle my ears", answer: "Jonah Burd", done: true, read: false },
-    { question: "Lore #5", answer: "Answer", done: false, read: false }
+    { question: "I was born with no wisdom teeth", answer: "Sarah", done: true, read: false },
+    { question: "I can wiggle my ears", answer: "Jonah", done: true, read: false },
+    { question: "I have drank people's fermented spit", answer: "Kalahn", done: true, read: false },
+    { question: "When I was 4, I rode my christmas gift bike down that stairs", answer: "Austin", done: true, read: false }
   ],
   [
-    { question: "Context #1", answer: "Answer", done: false, read: false },
+    { question: "images/jonah_barking.PNG", answer: "Jonah started barking", done: true, read: false },
     { question: "Context #2", answer: "Answer", done: false, read: false },
-    { question: "Context #3", answer: "Answer", done: false, read: false },
+    { question: "images/jonah_puking.jpg", answer: "Jonah started puking", done: true, read: false },
     { question: "Context #4", answer: "Answer", done: false, read: false },
-    { question: "Context #5", answer: "Answer", done: false, read: false }
+    { question: "images/carlos_emma.jpg", answer: "Carlos freaked out on a dude", done: true, read: false }
   ],
   [
-    { question: "Next #1", answer: "Answer", done: false, read: false },
-    { question: "Next #2", answer: "Answer", done: false, read: false },
-    { question: "Next #3", answer: "Answer", done: false, read: false },
-    { question: "Next #4", answer: "Answer", done: false, read: false },
-    { question: "Next #5", answer: "Answer", done: false, read: false }
+    { question: "images/kal_jacob_high.PNG", answer: "Kalahn & Jacob", done: true, read: false },
+    { question: "images/becky_kyle_no_location.jpg", answer: "Becky & Kyle", done: true, read: false },
+    { question: "images/becky_jason_halloween.jpg", answer: "Becky & Jason", done: true, read: false },
+    { question: "Next #5", answer: "Answer", done: false, read: false },
+    { question: "images/jacob_booze.png", answer: "Jacob & Jason", done: true, read: false }
   ]
 ];
 
