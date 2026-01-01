@@ -14,15 +14,15 @@ const categories = [
 // =====================
 const questions = [
   [
-    { question: "images/becky_gift.jpg", answer: "Becky", done: true, read: false },
+    { question: "images/becky_kyle_traitor.jpg", answer: "Becky", done: true, read: false },
     { question: "images/cant_believe_ur_married.JPEG", answer: "Kalahn", done: true, read: false },
-    { question: "images/coffee_no_good.JPEG", answer: "Jason", done: true, read: false },
+    { question: "images/becky_gift.jpg", answer: "Becky", done: true, read: false },
     { question: "images/my_dad_picked_me_up.JPEG", answer: "Kalahn", done: true, read: false },
-    { question: "", answer: "", done: false, read: false }
+    { question: "images/coffee_no_good.JPEG", answer: "Jason", done: true, read: false }
   ],
   [
-    { question: "Text #1", answer: "Answer", done: false, read: false },
-    { question: "images/jonah_ex.jpg", answer: "Jonah", done: true, read: false },
+    { question: "images/jacob_cancer.jpg", answer: "Jacob", done: true, read: false },
+    { question: "images/owen_hug.jpg", answer: "Rachel", done: true, read: false },
     { question: "images/emotionally_weak.JPEG", answer: "Emma", done: true, read: false },
     { question: "images/jake_kal_ex.JPEG", answer: "Kalahn", done: true, read: false },
     { question: "images/sarah_ex.JPEG", answer: "Sarah", done: true, read: false }
@@ -30,16 +30,16 @@ const questions = [
   [
     { question: "I used to have purple hair", answer: "Reese", done: true, read: false },
     { question: "I was born with no wisdom teeth", answer: "Sarah", done: true, read: false },
-    { question: "I can wiggle my ears", answer: "Jonah", done: true, read: false },
     { question: "I have drank people's fermented spit", answer: "Kalahn", done: true, read: false },
+    { question: "I took a shit on a public beach", answer: "Chris", done: true, read: false },
     { question: "When I was 4, I rode my christmas gift bike down the stairs", answer: "Austin", done: true, read: false }
   ],
   [
     { question: "images/jonah_barking.JPEG", answer: "Jonah started barking", done: true, read: false },
-    { question: "Context #2", answer: "Answer", done: false, read: false },
+    { question: "images/ayden_fire.jpg", answer: "Ayden set off the fire extinguisher", done: true, read: false },
     { question: "images/jonah_puking.jpg", answer: "Jonah started puking", done: true, read: false },
-    { question: "Context #4", answer: "Answer", done: false, read: false },
-    { question: "images/carlos_emma.JPEG", answer: "Carlos freaked out on a dude", done: true, read: false }
+    { question: "images/carlos_emma.JPEG", answer: "Carlos freaked out on a dude", done: true, read: false },
+    { question: "images/sarah_limp.jpg", answer: "I got roofied at a party and ended up at the health center with a busted lip", done: true, read: false },
   ],
   [
     { question: "images/kal_jacob_high.PNG", answer: "Kalahn & Jacob", done: true, read: false },
